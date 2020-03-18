@@ -5,17 +5,21 @@ import  reducer  from './reducers/index';
 import thunk from "redux-thunk";
 import './App.css';
 import { composeWithDevTools } from "redux-devtools-extension";
+import PokemonList from './components/PokemonList';
+// import SearchForm from './components/SearchForm';
+
 
 export const store = createStore(
   reducer,
   composeWithDevTools(applyMiddleware(thunk, logger))
 );
 console.log(reducer)
-function App(props) {
-  console.log(getState)
+function App() {
   return (
     <div className="App">
-      <h1>Pokemon Search</h1>
+      <h1 className="title">Pokemon</h1>
+      {/* <SearchForm /> */}
+      <PokemonList/>
     </div>
   );
 }
